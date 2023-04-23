@@ -161,7 +161,7 @@ if ($res)
     $stmt = $obj->prepare('UPDATE my_table SET col2=?,col3=? where col1=?');
 
     // Executes a prepared statement:
-    $values = array('col2' => 5, 'col3' => '0x55', 'col1' => 'five');
+    $values = ['col2' => 5, 'col3' => '0x55', 'col1' => 'five'];
     $pResult = $obj->execute($stmt, $values);
 
     // Upon success, $pResult would be:
@@ -191,10 +191,10 @@ if ($handle)
 
     // Prepares a statement:
     $stmt = cassandra_prepare($handle,
-        'UPDATE my_table SET col2=?,col3=? where col1=?');
+        'UPDATE my_table SET col2=?,col3=? WHERE col1=?');
 
     // Executes a prepared statement:
-    $values = array('col2' => 5, 'col3' => '0x55', 'col1' => 'five');
+    $values = ['col2' => 5, 'col3' => '0x55', 'col1' => 'five'];
     $pResult = cassandra_execute($handle, $stmt, $values);
 
     // Closes the connection:
